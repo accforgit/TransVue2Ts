@@ -2,7 +2,7 @@ const fs = require('fs')
 const generate = require('@babel/generator').default
 const { parse } = require('@babel/parser')
 const { babelPlugins } = require('./vars')
-const { errorMsgTxtPath } = require('./vars.js')
+const VARS = require('./vars.js')
 
 /**
  * watch的函数名称
@@ -89,7 +89,7 @@ const writeError = errorData => {
     ${errorData.msg}
   `)
   let errorMsg = `time: ${new Date().toLocaleString()}\ntitle: ${errorData.title}\nmsg: ${errorData.msg}\n\n`
-  fs.writeFile(errorMsgTxtPath, errorMsg, { flag: 'a' }, err => {
+  fs.writeFile(VARS.errorMsgTxtPath, errorMsg, { flag: 'a' }, err => {
     if (err) console.log(err)
   })
 }
