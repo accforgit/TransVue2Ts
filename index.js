@@ -3,8 +3,8 @@ const path = require('path')
 const fs = require('fs')
 const ManageMain = require('./ManageMain.js')
 const { capUpper, writeError } = require('./commonutil')
+const VARS = require('./vars.js')
 
-let rootFile = ''
 let rootBaseName = ''
 const replacejs2TsPathList = []
 
@@ -14,12 +14,13 @@ entry()
 function entry () {
   const argv = process.argv
   if (argv[2]) {
-    rootFile = path.resolve(__dirname, argv[2])
+    VARS.rootPath = path.resolve(__dirname, argv[2])
+    VARS.errorMsgTxtPath = path.join(path.dirname(VARS.rootPath), 'errorMsgTxt.txt')
     console.log(`
-      开始处理： ${rootFile}
+      开始处理： ${VARS.rootPath}
     `)
-    rootBaseName = getBaseName(rootFile)
-    excuteFile(rootFile)
+    rootBaseName = getBaseName(VARS.rootPath)
+    excuteFile(VARS.rootPath)
   } else {
     console.log('请输入需要转换的文件(夹)路径')
   }

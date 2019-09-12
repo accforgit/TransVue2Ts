@@ -39,5 +39,6 @@ module.exports = {
     'optionalCatchBinding',
     'throwExpressions'
   ],
-  errorMsgTxtPath: path.resolve(__dirname, 'errorMsg.txt')
+  rootPath: '',
+  errorMsgTxtPath: ''
 }
