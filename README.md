@@ -18,12 +18,13 @@ npm install transvue2ts -g
 ## Usage
 
 同时支持单文件和文件目录的转化
+
 打开命令行工具，输入命令行指令，格式为：
 ```
 transvue2ts vueFileFullPath
 ```
 
-其中，`transvue2ts`是库的指令，第二个参数是需要处理的文件(夹)的 **完整全路径**
+其中，`transvue2ts`是库的指令，第二个参数 `vueFileFullPath`表示需要处理的文件(夹)的 **完整全路径**
 
 例如：
 
