@@ -18,21 +18,30 @@ npm install transvue2ts -g
 ## Usage
 
 同时支持单文件和文件目录的转化
-打开命令行工具，输入 `transvue2ts`指令，`transvue2ts`是库的指令，第二个参数是需要处理的文件(夹)的 **完整全路径**
+打开命令行工具，输入命令行指令，格式为：
+```
+transvue2ts vueFileFullPath
+```
+
+其中，`transvue2ts`是库的指令，第二个参数是需要处理的文件(夹)的 **完整全路径**
 
 例如：
 
-处理 `E:\project\testA\src\test.vue`文件：
+处理 `E:\project\testA\src\test.vue`文件，在命令行中输入：
 ```
 transvue2ts E:\project\testA\src\test.vue
-=>
-输出路径：E:\project\testA\src\testTs.vue
 ```
-处理 `E:\project\testA\src`文件夹下的所有 `.vue`文件：
+转化后的文件路径为
+```
+E:\project\testA\src\testTs.vue
+```
+处理 `E:\project\testA\src`文件夹下的所有 `.vue`文件，在命令行中输入：
 ```
 transvue2ts E:\project\testA\src
-=>
-输出路径：E:\project\testA\srcTs
+```
+转化后的文件夹路径为
+```
+E:\project\testA\srcTs
 ```
 对于单文件来说，其必须是 `.vue`结尾，转化后的文件将输出到同级目录下，文件名为原文件名 + `Ts`，例如 `index.vue` => `indexTs.vue`
 
