@@ -1,0 +1,37 @@
+{
+  "name": "transvue2ts",
+  "version": "1.0.1",
+  "license": "MIT",
+  "description": "auto transform vue-js to vue-ts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "transvue2ts": "index.js"
+  },
+  "author": {
+    "name": "kother1",
+    "email": "kother@foxmail.com",
+    "url": "https://github.com/accforgit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/accforgit/TransVue2Ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/accforgit/TransVue2Ts/issues"
+  },
+  "keywords": [
+    "transvue2ts",
+    "transform",
+    "vue",
+    "typescript"
+  ],
+  "private": false,
+  "dependencies": {
+    "@babel/generator": "^7.5.5",
+    "@babel/parser": "^7.5.5"
+  },
+  "devDependencies": {}
+}
