@@ -75,6 +75,17 @@ module.exports = {
       }
     }
   },
+  filters: {
+    handler (item, self) {
+      let methodsTemplate = 'filters: {\n'
+      item.value.properties.forEach(v => {
+        methodsTemplate += commonFnManage(v, self).trimEnd() + ','
+      })
+      return {
+        template: methodsTemplate.replace(/,$/, '') + '}\n'
+      }
+    }
+  },
   mixins: {
     handler (item) {
       return {

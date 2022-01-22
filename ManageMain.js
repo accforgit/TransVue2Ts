@@ -79,13 +79,17 @@ class ManageMain {
     const exportDefaultAfterStr = this.exportDefaultAfter.map(item => {
       return generateFn(item)
     }).join('\n')
-    let componentsTemplate = '@Component'
+    let componentsTemplate = '@Component({'
+    let componentsContentTemplate = ''
     if (this.templateMap.components) {
-      componentsTemplate = `${componentsTemplate}({
-        ${this.templateMap.components}
-      })`
+      componentsContentTemplate = this.templateMap.components
       this.templateMap.components = ''
     }
+    if (this.templateMap.filters) {
+      componentsContentTemplate += `\n${this.templateMap.filters}`
+      this.templateMap.filters = ''
+    }
+    componentsTemplate += `${componentsContentTemplate}})`
     const tsTemplate = Object.keys(this.templateMap).reduce((t, c) => `${t}\n${this.templateMap[c]}`, '')
     return `
       import { ${this.tsVueOptsList.join(', ')} } from 'vue-property-decorator'

@@ -1,6 +1,6 @@
 {
   "name": "transvue2ts",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "description": "auto transform vue-js to vue-ts",
   "main": "index.js",
